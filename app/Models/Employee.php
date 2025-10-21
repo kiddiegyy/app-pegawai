@@ -15,4 +15,25 @@ class Employee extends Model
         'tanggal_masuk',
         'status',
     ];
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'departement_id');
+    }
+
+    public function position()
+    {
+        return $this->belongsTo(Position::class, 'jabatan_id');
+    }
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, 'karyawan_id');
+    }
+
+    public function salaries()
+    {
+        return $this->hasMany(Salary::class, 'karyawan_id');
+    }
+
 }
