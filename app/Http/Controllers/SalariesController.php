@@ -14,7 +14,7 @@ class SalariesController extends Controller
      */
     public function index()
     {
-        $salaries = Salary::with('employee')->orderBy('bulan','desc')->paginate(15);
+        $salaries = Salaries::with('employee')->orderBy('bulan','desc')->paginate(15);
         return view('salaries.index', compact('salaries'));
     }
 
@@ -41,7 +41,7 @@ class SalariesController extends Controller
         ]);
 
         $total = $request->gaji_pokok + $request->tunjangan - $request->potongan;
-        Salary::create(array_merge($request->all(), ['total_gaji' => $total]));
+        Salaries::create(array_merge($request->all(), ['total_gaji' => $total]));
 
         return redirect()->route('salaries.index')->with('success','Gaji tersimpan.');
     }

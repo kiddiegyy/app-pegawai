@@ -4,11 +4,11 @@
     
 </head>
 <body>
-    @extends('layouts.app')
+    @extends('layouts.master')
     @section('title', 'Tambah Salary')
     @section('content')
     <div class="container mt-4">
-        <h2 class="mb-4">Tambah Salary</h2>
+        <h2 class="mb-4">Form Salary</h2>
         <form action="{{ route('salaries.store') }}" method="POST">
             @csrf
             <div class="mb-3">

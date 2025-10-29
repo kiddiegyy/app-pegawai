@@ -5,6 +5,7 @@
 </head>
 <body>
    @extends('layouts.master')
+   @section('title', 'Data Departemen')
    @section('content')
    <div class="container mt-4">
     <h2>Daftar Departemen</h2>

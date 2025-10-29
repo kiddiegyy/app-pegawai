@@ -4,10 +4,9 @@
     
 </head>
 <body>
-    @extends('layouts.app')
+    @extends('layouts.master')
     @section('title', 'Detail Salary')
     @section('content')
-    
     <div class="container mt-4">
         <h2 class="mb-4">Detail Salary</h2>
         

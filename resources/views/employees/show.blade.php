@@ -4,6 +4,9 @@
     <title>Detail Pegawai</title>
 </head>
 <body>
+    @extends('layouts.master')
+    @section('title', 'Detail Pegawai')
+    @section('content')
     <h1>Detail Pegawai</h1>
     <table border="1" cellpadding="8" cellspacing="0">
       <tr>

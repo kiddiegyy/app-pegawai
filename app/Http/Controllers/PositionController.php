@@ -2,63 +2,76 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Position;
 use Illuminate\Http\Request;
 
 class PositionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Menampilkan semua data posisi (jabatan)
      */
     public function index()
     {
-        //
+        $positions = Position::orderBy('nama_jabatan')->paginate(15);
+        return view('positions.index', compact('positions'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Menampilkan form tambah jabatan baru
      */
     public function create()
     {
-        //
+        return view('positions.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Menyimpan data jabatan baru ke database
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_jabatan' => 'required|string|max:100',
+            'gaji_pokok' => 'required|numeric|min:0',
+        ]);
+
+        Position::create($request->all());
+
+        return redirect()->route('positions.index')->with('success', 'Jabatan berhasil ditambahkan.');
     }
 
     /**
-     * Display the specified resource.
+     * Menampilkan form edit jabatan
      */
-    public function show(string $id)
+    public function edit($id)
     {
-        //
+        $position = Position::findOrFail($id);
+        return view('positions.edit', compact('position'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Memperbarui data jabatan di database
      */
-    public function edit(string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_jabatan' => 'required|string|max:100',
+            'gaji_pokok' => 'required|numeric|min:0',
+        ]);
+
+        $position = Position::findOrFail($id);
+        $position->update($request->all());
+
+        return redirect()->route('positions.index')->with('success', 'Jabatan berhasil diperbarui.');
     }
 
     /**
-     * Update the specified resource in storage.
+     * Menghapus data jabatan
      */
-    public function update(Request $request, string $id)
+    public function destroy($id)
     {
-        //
-    }
+        $position = Position::findOrFail($id);
+        $position->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect()->route('positions.index')->with('success', 'Jabatan berhasil dihapus.');
     }
 }

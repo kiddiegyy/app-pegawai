@@ -14,6 +14,8 @@ class Employee extends Model
         'alamat',
         'tanggal_masuk',
         'status',
+        'departemen_id',
+        'jabatan_id',
     ];
 
     public function department()
@@ -26,7 +28,7 @@ class Employee extends Model
         return $this->belongsTo(Position::class, 'jabatan_id');
     }
 
-    public function attendances()
+    public function attendance()
     {
         return $this->hasMany(Attendance::class, 'karyawan_id');
     }

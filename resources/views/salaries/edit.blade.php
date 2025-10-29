@@ -4,7 +4,7 @@
     
 </head>
 <body>
-    @extends('layouts.app')
+    @extends('layouts.master')
     @section('title', 'Edit Salary')
     @section('content')
     <div class="container mt-4">

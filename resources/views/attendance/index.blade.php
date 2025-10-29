@@ -4,8 +4,10 @@
     
 </head>
 <body>
-    @extends('layouts.app')
+    @extends('layouts.master')
+
     @section('title', 'Data Attendance')
+
     @section('content')
     <div class="container mt-4">
         <h2 class="mb-4">Data Attendance</h2>
@@ -43,5 +45,13 @@
                     </td>
                 </tr>
                 @empty
+                <tr>
+                    <td colspan="7" class="text-center">Belum ada data attendance.</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+    @endsection
 </body>
 </html>

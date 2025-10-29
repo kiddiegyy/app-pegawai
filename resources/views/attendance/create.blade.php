@@ -4,11 +4,11 @@
     
 </head>
 <body>
-    @extends('layouts.app')
+    @extends('layouts.master')
     @section('title', 'Tambah Attendance')
     @section('content')
     <div class="container mt-4">
-        <h2 class="mb-4">Tambah Attendance</h2>
+        <h2 class="mb-4">Form Attendance</h2>
         
         <form action="{{ route('attendance.store') }}" method="POST">
             @csrf

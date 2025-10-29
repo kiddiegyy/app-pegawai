@@ -84,6 +84,8 @@ class EmployeeController extends Controller
             'alamat' ,
             'tanggal_masuk' ,
             'status' ,
+            'depatemen_id',
+            'jabatan_id'
         ]));
         return redirect()->route('employees.index');
     }

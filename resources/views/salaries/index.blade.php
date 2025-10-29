@@ -4,11 +4,11 @@
     
 </head>
 <body>
-    @extends('layouts.app')
-    @section('title', 'Data Salaries')
+    @extends('layouts.master')
+    @section('title', 'Data Salary')
     @section('content')
     <div class="container mt-4">
-        <h2 class="mb-4">Data Salaries</h2>
+        <h2 class="mb-4">Data Salary</h2>
         <a href="{{ route('salaries.create') }}" class="btn btn-primary mb-3">+ Tambah Salary</a>
         <table class="table table-bordered table-striped">
             <thead class="table-dark">

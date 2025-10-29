@@ -5,9 +5,10 @@
 </head>
 <body>
     @extends('layouts.master')
+    @section('title', 'Tambah Jabatan')
     @section('content')
     <div class="container mt-4">
-        <h2>Tambah Jabatan</h2>
+        <h2>Form Jabatan</h2>
         
         <form action="{{ route('positions.store') }}" method="POST">
         @csrf

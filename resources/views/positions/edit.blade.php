@@ -5,6 +5,7 @@
 </head>
 <body>
     @extends('layouts.master')
+    @section('title', 'Edit Jabatan')
     @section('content')
     <div class="container mt-4">
         <h2>Edit Jabatan</h2>

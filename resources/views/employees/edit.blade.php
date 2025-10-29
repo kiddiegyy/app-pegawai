@@ -4,6 +4,9 @@
     <title>Edit Data Pegawai</title>
 </head>
 <body>
+    @extends('layouts.master')
+    @section('title', 'Edit Data Pegawai')
+    @section('content')
     <h2>Edit Data Pegawai</h2>
     <form action="{{ route('employees.update', $employees->id) }}" method="POST">
         @csrf

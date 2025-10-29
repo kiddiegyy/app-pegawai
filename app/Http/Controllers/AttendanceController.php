@@ -14,7 +14,7 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $attendances = Attendance::with('employee')->orderBy('tanggal','desc')->paginate(15);
+        $attendances = Attendance::with('employees')->orderBy('tanggal', 'desc')->paginate(15);
         return view('attendance.index', compact('attendances'));
     }
 
@@ -66,6 +66,8 @@ class AttendanceController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $attendance = Attendance::findOrFail($id);
+        
         $request->validate([
             'karyawan_id' => 'required|exists:employees,id',
             'tanggal' => 'required|date',
@@ -73,7 +75,7 @@ class AttendanceController extends Controller
             'waktu_keluar' => 'nullable|date_format:H:i',
             'status_absensi' => 'required|in:hadir,izin,sakit,alpha',
         ]);
-
+        
         $attendance->update($request->all());
         return redirect()->route('attendance.index')->with('success','Absensi diperbarui.');
     }
@@ -83,6 +85,7 @@ class AttendanceController extends Controller
      */
     public function destroy(string $id)
     {
+        $attendance = Attendance::findOrFail($id);
         $attendance->delete();
         return redirect()->route('attendance.index')->with('success','Absensi dihapus.');
     }

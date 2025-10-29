@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title','Aplikasi HR')</title>
+    <meta charset="UTF-8">
+    <title>@yield('title', 'App Pegawai')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="nav">
-        <div class="container">
-            <a href="{{ url('/') }}" class="brand">HR App</a>
-            <nav class="nav-links">
-                <a href="{{ route('departments.index') }}">Departments</a>
-                <a href="{{ route('positions.index') }}">Positions</a>
-                <a href="{{ route('employees.index') }}">Employees</a>
-                <a href="{{ route('attendance.index') }}">Attendance</a>
-                <a href="{{ route('salaries.index') }}">Salaries</a>
-            </nav>
+    <nav class="navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="{{ url('/') }}">App Pegawai</a>
+            <ul class="navbar-nav d-flex flex-row">
+                <li><a class="nav-link" href="{{ route('employees.index') }}">Employee</a></li>
+                <li><a class="nav-link" href="{{ route('departments.index') }}">Department</a></li>
+                <li><a class="nav-link" href="{{ route('positions.index') }}">Position</a></li>
+                <li><a class="nav-link" href="{{ route('attendance.index') }}">Attendance</a></li>
+                <li><a class="nav-link" href="{{ route('salaries.index') }}">Salaries</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <main class="container">
-        @if(session('success'))
-            <div class="alert success">{{ session('success') }}</div>
-        @endif
-
         @yield('content')
     </main>
 
-    <footer class="footer">
-        <div class="container">© {{ date('Y') }} HR App</div>
+    <footer>
+        <p>&copy; {{ date('Y') }} App Pegawai</p>
     </footer>
 </body>
 </html>
