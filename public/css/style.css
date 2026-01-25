@@ -1,0 +1,205 @@
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #050505, #0d1117, #000);
+  color: #e5e5e5;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ============ HEADER NAV ============ */
+.navbar {
+  background: linear-gradient(90deg, #0a0a0a, #111827, #0d1117);
+  box-shadow: 0 4px 15px rgba(0, 255, 157, 0.15);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0, 255, 157, 0.3);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #00ffb7 !important;
+  text-shadow: 0 0 8px rgba(0, 255, 157, 0.9);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  color: #80ffd4 !important;
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: #d1d1d1 !important;
+  font-weight: 500;
+  margin-right: 1.5rem;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: #00ff9d !important;
+  text-shadow: 0 0 6px rgba(0, 255, 157, 0.8);
+}
+
+/* ============ CONTENT BOX ============ */
+.container {
+  background: rgba(17, 25, 40, 0.9);
+  border: 1px solid rgba(0, 255, 157, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(0, 255, 157, 0.15);
+  padding: 2.2rem;
+  margin-top: 3rem;
+  backdrop-filter: blur(12px);
+}
+
+/* ============ TITLE ============ */
+h1, h2, h3 {
+  color: #00ffb7;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(0, 255, 157, 0.7);
+  margin-bottom: 1.8rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #00ff9d;
+  box-shadow: 0 0 8px rgba(0, 255, 157, 0.8);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* ============ TABLE ============ */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 157, 0.25);
+  border-radius: 10px;
+  color: #f2f2f2;
+  backdrop-filter: blur(6px);
+}
+
+.table th, .table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid rgba(0, 255, 157, 0.15);
+}
+
+.table th {
+  background: rgba(0, 255, 157, 0.12);
+  color: #00ffb7;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.table tr:hover {
+  background-color: rgba(0, 255, 157, 0.1);
+  transition: 0.25s;
+}
+
+/* ============ FORM INPUT ============ */
+input, select, textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 157, 0.3);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.25s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #00ffb7;
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.4);
+  background: rgba(0, 255, 157, 0.07);
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+  padding: 10px 18px;
+}
+
+.btn-primary {
+  background-color: #00ff9d;
+  border: none;
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.6);
+}
+
+.btn-primary:hover {
+  background-color: #00cc7a;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.9);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #00ff9d;
+  color: #00ffb7;
+}
+
+.btn-outline:hover {
+  background: #00ff9d;
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.8);
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: linear-gradient(90deg, #0d0d0d, #111827);
+  color: #bfbfbf;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  border-top: 1px solid rgba(0, 255, 157, 0.3);
+  box-shadow: 0 -4px 12px rgba(0, 255, 157, 0.1);
+}
+
+/* ============ ANIMATION & LINKS ============ */
+a, button {
+  transition: all 0.25s ease-in-out;
+}
+
+a:hover, button:hover {
+  opacity: 0.9;
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 157, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 157, 0.7);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  .container {
+    padding: 1.2rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .table th, .table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
